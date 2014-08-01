@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 #gem 'mongoid', github: 'mongoid/mongoid'
 gem 'mongoid', '~> 4.0.0'
 gem 'rails', '4.1.4'
+gem 'bcrypt'
+gem 'rspec'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
