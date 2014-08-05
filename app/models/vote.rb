@@ -3,3 +3,4 @@ class Vote
   belongs_to :quote
   belongs_to :user
 end
+
