@@ -5,10 +5,11 @@ source 'https://rubygems.org'
 #gem 'mongoid', github: 'mongoid/mongoid'
 gem 'mongoid', '~> 4.0.0'
 gem 'rails', '4.1.4'
-gem 'bcrypt'
 gem 'rspec'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+
+gem 'bootstrap-sass', '~> 3.2.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -38,7 +39,7 @@ group :test do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'

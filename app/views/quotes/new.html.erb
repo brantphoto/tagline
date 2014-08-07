@@ -1,9 +1,9 @@
-<h1> Add a new quote! </h1>
+<h1>Criteria#new</h1>
 
-<%= form_for @quote do |f| %>
-	Name: <%= f.text_field :quote, placeholder: "quote" %>
-	<%= f.submit "Add quote!" %>
+Add a quote for this location<br />
+<%= @location.name %>
 
+<%= form_for [@location, @quote] do |f| %>
+	<%= f.text_field :quote, placeholder: "What's is your quote?" %>
+	<%= f.submit %>
 <% end %>
-
-<%= link_to "Back to list!", quotes_path %>

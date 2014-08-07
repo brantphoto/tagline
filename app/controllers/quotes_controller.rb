@@ -1,10 +1,9 @@
 class QuotesController < ApplicationController
-def index
-  	@quotes = Quote.all
-  end
+  before_action :get_location 
+  before_action :check_security
 
-  def show
-  	@quote = Quote.find(params[:id])
+  def index
+  	@quotes = @location.quotes
   end
 
   def new
@@ -12,13 +11,14 @@ def index
   end
 
   def create
-  	@quote = Quote.new(params.require(:bean).permit(:name, :roast, :origin, :quantity))
-  	if @quote.save
-  		redirect_to quotes_path
-  	else
-  		render 'new'
-  	end
+  	quote = Quote.new(params.require(:quote).permit(:quote))
+  	# Attach this criterion to a decision
+    quote.location = @location
+    if quote.save
+      redirect_to location_quotes_path(@location.id)
+    end
   end
+
 
   def edit
     @quote = Quote.find(params[:id]) 
@@ -38,4 +38,18 @@ def index
     @quote.destroy
     redirect_to quotes_path
   end
+
+private 
+  def get_location
+    @location = Location.find(params[:location_id])
+  end
+
+  def check_security
+    if !current_user
+      redirect_to home_path
+    end
+  end
+
+
+
 end

@@ -9,7 +9,19 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :quotes
+  get 'users/:id/reactivate' => 'users#reactivate' 
+
+  get "locations/home" => "locations#home", as: :home
+
+  resources :users
+  
+  resources :locations do
+    resources :quotes
+  end
+
+  resource :session, only: [:new, :create, :destroy] 
+  
+  get 'users/:id/reactivate' => 'users#reactivate', as: :reactivate_user
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

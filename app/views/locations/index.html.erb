@@ -1,0 +1,12 @@
+<h1>locations#index</h1>
+
+<ul>
+<% @locations.each do |d| %>
+	<li>
+		<%= link_to d.name, location_quotes_path(d.id) %>
+		<%= button_to "X", location_path(d.id), method: :delete %>
+	</li>
+<% end %>
+</ul>
+
+<%= link_to "Add a new Location ", new_location_path if current_user %>

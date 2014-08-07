@@ -1,8 +1,15 @@
-<h1>Today's Quotes</h1>
+<h1>quotes#index</h1>
+
+Location:<br />
+<%= @location.name %>
+
 <ul>
-	<% @quotes.each do |q| %>
-		<li>
-		<strong> <%= q.quote %> </strong><%= link_to "Show me more about #{q.quote}!", quote_path(q) %>
-		</li>
-	<% end %>
+<% @quotes.each do |c| %>
+	<li>
+		<b><%= c.quote %></b> for the decision <b><%= c.location.name %></b>
+		<%= button_to "X", location_quote_path(@location.id, c.id), method: :delete %>
+	</li>
+<% end %>
 </ul>
+
+<%= link_to "Add a quote", new_location_quote_path(@location.id) %>

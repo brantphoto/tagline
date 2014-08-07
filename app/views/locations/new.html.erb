@@ -1,0 +1,10 @@
+<h1>new.html.erb</h1>
+
+<h1>Decisions#new</h1>
+
+<%= form_for @location do |f| %>
+	<%= f.text_field :name, placeholder: "What location would you like to add?" %>
+	<%= f.text_field :zipcode, placeholder: "What location would you like to add?" %>
+
+	<%= f.submit %>
+<% end %>
