@@ -25,6 +25,7 @@
  $heightone: 700px;
  $lcolpadding: 30px;
  $sitewidth: 1000px;
+ $leftyrighty: 15px;
 
 
 
@@ -32,7 +33,7 @@ body {
 	width:$sitewidth
 }
 
- h1 {
+ h1, h2, h3 h4 {
  	color: $color5;
  }
 
@@ -74,16 +75,21 @@ padding-left: $lcolpadding;
 	display: inline-block;
 	width: 340px;
 	height: $heightone;
+	margin-left: $leftyrighty;
+	padding-right: $leftyrighty;
 	background-color: $color2;
 	border-right: 5px solid $color5
 
 }
 
 .rightycol {
+	padding-left: $leftyrighty;
+	margin-left: 20px;
+	padding-right: $leftyrighty;
+	margin-top: 20px;
 	top: 0;
 	float: left;
-	display: inline-block;
-	width: 640px;
+	width: 590px;
 	height: $heightone;
 	background-color: $color2;
 	overflow: scroll;
@@ -91,17 +97,22 @@ padding-left: $lcolpadding;
 }
 
 .leftycol h1 {
-	padding-left: $lcolpadding;
-	padding-right: 0px;
+	display: inline-block;
 }
 
 .leftcol a {
 	margin-top: 20px;
 }
 
-.rightcol h1 {
-	padding-left: $lcolpadding;
-	padding-right: 0px;
+.rightcol.h1 {
+	// margin-top: 40px;
+	// float: center;
+	// padding-left: $lcolpadding;
+	// padding-right: 0px;
+
+}
+
+.rightcol h4 {
 
 }
 
@@ -113,6 +124,30 @@ padding-left: $lcolpadding;
 
 }
 
-footer {
+#forh2 {
+margin-left: 150px;
+color: lighten($color5, 5%);
+width: 220px;
 }
+
+#forh3 {
+color: lighten($color5, 10%);
+margin-left: 190px;
+
+}
+
+#forh4 {
+margin-top: 30px;
+margin-left: 250px;
+color: lighten($color5, 15%);
+font-style: italic;
+}
+
+#rightyh1 {
+	color: lighten($color5, 80%);
+}
+
+
+
+
 
