@@ -23,6 +23,13 @@
  $color5: #BED7DB; 
 
  $heightone: 700px;
+ $lcolpadding: 30px;
+
+
+
+body {
+	width:980px
+}
 
  h1 {
  	color: $color5;
@@ -31,22 +38,64 @@
 .maincontainer {
 	display: inline-block;
 	width: 980px;
-	height: $heightone;
-	background-color: $color2
+	// height: $heightone;
+	background-color: $color2;
+	// margin-top: 20px;
+	// padding-top: 20px;
 }
 
+.maincontainer a {
+padding-left: $lcolpadding;
+}
+
+.maincontainer a:link {
+    color: darken($color5, 70%);
+}
+
+/* visited link */
+.maincontainer a:visited {
+    color: darken($color5, 30%);
+}
+
+/* mouse over link */
+.maincontainer a:hover {
+    color: $color5;
+}
+
+/* selected link */
+.maincontainer a:active {
+    color: $color5;
+}
+
+
 .leftycol {
-	
-	width: 327px;
+	float: left;
+	display: inline-block;
+	width: 340px;
 	height: $heightone;
 	background-color: $color2;
+	border-right: 5px solid $color5
 
 }
 
 .rightycol {
+	top: 0;
 	float: left;
-	width: 650px;
+	display: inline-block;
+	width: 350px;
 	height: $heightone;
+	background-color: $color2;
+	overflow: scroll;
+
+}
+
+.leftycol h1 {
+	padding-left: $lcolpadding;
+	padding-right: 0px;
+}
+
+.leftcol a {
+	margin-top: 20px;
 }
 
 .leftyboxes {
