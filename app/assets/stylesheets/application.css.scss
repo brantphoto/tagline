@@ -16,3 +16,47 @@
 
  @import 'bootstrap'; 
 
+ $color1: #132726; 
+ $color2: #283F42;
+ $color3: #65838B;
+ $color4: #A1BABE;
+ $color5: #BED7DB; 
+
+ $heightone: 700px;
+
+ h1 {
+ 	color: $color5;
+ }
+
+.maincontainer {
+	display: inline-block;
+	width: 980px;
+	height: $heightone;
+	background-color: $color2
+}
+
+.leftycol {
+	
+	width: 327px;
+	height: $heightone;
+	background-color: $color2;
+
+}
+
+.rightycol {
+	float: left;
+	width: 650px;
+	height: $heightone;
+}
+
+.leftyboxes {
+
+}
+
+.rightyboxes {
+
+}
+
+footer {
+}
+

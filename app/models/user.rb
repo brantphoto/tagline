@@ -13,6 +13,6 @@ class User
   has_secure_password
   
   has_many :quotes
-  has_many :votes
+  has_many :votes 
   
 end

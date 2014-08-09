@@ -21,3 +21,5 @@ quotes = Quote.create([
 	{ quote: "Grey Poupon", place: places[1] , user: users[1] }, 
 	{ quote:"It's pretty damn good", place: places[2] , user: users[2] } ])
 
+
+
