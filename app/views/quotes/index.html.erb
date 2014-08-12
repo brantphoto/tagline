@@ -1,15 +1,37 @@
-<h1>quotes#index</h1>
+<div class="row" id="howtall">
 
-Location:<br />
-<%= @location.name %>
+	<div class="col-md-4 shaade4">
+		<h1><b>Locations: </h1>
+		<%= link_to "Add a new Location ", new_location_path if current_user %>
 
-<ul>
-<% @quotes.each do |c| %>
-	<li>
-		<b><%= c.quote %></b> for the decision <b><%= c.location.name %></b>
-		<%= button_to "X", location_quote_path(@location.id, c.id), method: :delete %>
-	</li>
-<% end %>
-</ul>
 
-<%= link_to "Add a quote", new_location_quote_path(@location.id) %>
+	<ul>
+		<% @locations.each do |c| %>
+			<li>
+				<%= link_to c.name, location_quotes_path(c.id) %>
+			</li>	
+		<% end %>
+		</ul>
+
+
+	</div>
+
+	<div class="col-md-8 shaade1">
+	
+
+		<h1><b>Location:
+		<%= @location.name %> </h1>
+		<%= link_to "Add a quote", new_location_quote_path(@location.id) %>
+
+
+		<ul>
+		<% @quotes.each do |c| %>
+			<li>
+				<b>"<%= c.quote %>"</b><br> <b> -<%=  c.user.username %></b>
+				<%= button_to "X", location_quote_path(@location.id, c.id), method: :delete %>
+			</li>
+		<% end %>
+		</ul>	
+	</div>
+
+</div>

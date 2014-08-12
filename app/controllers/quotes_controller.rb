@@ -4,6 +4,7 @@ class QuotesController < ApplicationController
 
   def index
   	@quotes = @location.quotes
+    @locations = Location.all
   end
 
   def new
@@ -14,6 +15,7 @@ class QuotesController < ApplicationController
   	quote = Quote.new(params.require(:quote).permit(:quote))
   	# Attach this criterion to a decision
     quote.location = @location
+    quote.user = current_user
     if quote.save
       redirect_to location_quotes_path(@location.id)
     end
@@ -43,6 +45,10 @@ private
   def get_location
     @location = Location.find(params[:location_id])
   end
+
+  # def get_user 
+  #   @user = User.find(params[:_id])
+  #   quote
 
   def check_security
     if !current_user
