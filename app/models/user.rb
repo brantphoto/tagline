@@ -1,6 +1,10 @@
 class User
   include Mongoid::Document
   include ActiveModel::SecurePassword
+  include Mongoid::Paperclip
+
+  has_mongoid_attached_file :image
+  validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   field :username, type: String
   field :firstname, type: String

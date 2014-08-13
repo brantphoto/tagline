@@ -38,18 +38,24 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
+        <li>
+            <% if current_user %>
+            <a href="#">Welcome,  <%= link_to current_user.username.capitalize, new_user_path %><%= current_user.username.capitalize %>!</a>
+            <% else %>
+              <%= link_to "Sign up", new_user_path %>
+            <% end %>
+        </li>
+        <li>
+          <% if current_user %>
+            <%= link_to "Log out", session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Log in", new_session_path %>
+          <% end %>
+        </li>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
+
 

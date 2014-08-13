@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    user = User.new(params.require(:user).permit(:username, :email, :password, :password_confirmation))
+    user = User.new(params.require(:user).permit(:username, :email, :password, :password_confirmation, :image))
     if user.save
       redirect_to locations_path
     else 
