@@ -1,37 +1,42 @@
-<div class="row" id="howtall">
+<div class="row">
+	<div class="col-md-4 shaade4 headerz headerzleft">
+		<div class="boxxersleft shaade0">
+			<h1>Locations </h1>
+			<%= link_to "Add New", new_location_path if current_user %>
+		</div>
+	</div>
+	
+	<div class="col-md-8 shaade1 headerz headerzright">
+		<div class="boxxers shaade0">
+			<h1><%= @location.name %> </h1>
+			<%= link_to "Add a quote", new_location_quote_path(@location.id) %>
+		</div
+	</div>
+</div>
 
-	<div class="col-md-4 shaade4">
-		<h1><b>Locations: </h1>
-		<%= link_to "Add a new Location ", new_location_path if current_user %>
+<div class="row">
+
+	<div class="col-md-4 shaade4 howtall">
 
 
-	<ul>
+	
 		<% @locations.each do |c| %>
-			<li>
-				<%= link_to c.name, location_quotes_path(c.id) %>
-			</li>	
+			<div class="boxxersleft shaade1">
+				<h1><%= link_to c.name.capitalize, location_quotes_path(c.id) %></h1>
+			</div>	
 		<% end %>
-		</ul>
+	
 
 
 	</div>
 
-	<div class="col-md-8 shaade1">
+	<div class="col-md-8 shaade1 howtall">
 	
-
-		<h1><b>Location:
-		<%= @location.name %> </h1>
-		<%= link_to "Add a quote", new_location_quote_path(@location.id) %>
-
-
-		<ul>
 		<% @quotes.each do |c| %>
-			<li>
-				<b>"<%= c.quote %>"</b><br> <b> -<%=  c.user.username %></b>
-				<%= button_to "X", location_quote_path(@location.id, c.id), method: :delete %>
-			</li>
-		<% end %>
-		</ul>	
+			<div class="boxxers shaade3" >
+				<h3>"<%= c.quote %>"</h3><h3>  - <%=  c.user.username.capitalize %></h3>
+			</div>
+		<% end %>	
 	</div>
 
 </div>
