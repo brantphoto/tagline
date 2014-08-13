@@ -40,9 +40,9 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
             <% if current_user %>
-            <a href="#">Welcome,  <%= link_to current_user.username.capitalize, new_user_path %><%= current_user.username.capitalize %>!</a>
+            <%= link_to "Hello " + current_user.username.capitalize + "!", new_user_path %>
             <% else %>
-              <%= link_to "Sign up", new_user_path %>
+              <%= link_to "Sign up", new_user_path %> 
             <% end %>
         </li>
         <li>
