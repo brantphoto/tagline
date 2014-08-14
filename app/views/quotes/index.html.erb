@@ -21,8 +21,10 @@
 
 	
 		<% @locations.each do |c| %>
+
 			<div class="boxxersleft shaade1">
 				<h1><%= link_to c.name.capitalize, location_quotes_path(c.id) %></h1>
+
 			</div>	
 		<% end %>
 	
@@ -33,8 +35,10 @@
 	<div class="col-md-8 shaade1 howtall">
 	
 		<% @quotes.each do |c| %>
+
 			<div class="boxxers shaade3" >
 				<h3>"<%= c.quote %>"</h3><h3>  - <%=  c.user.username.capitalize %></h3>
+				<%= link_to "Vote", location_quote_votes_path(c.location.id, c.id), :method => :post %>
 			</div>
 		<% end %>	
 	</div>

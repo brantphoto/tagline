@@ -1,4 +1,5 @@
-2Rails.application.routes.draw do
+Rails.application.routes.draw do
+
   get 'votes/create'
 
   get 'votes/update'
@@ -20,7 +21,9 @@
   resources :users
   
   resources :locations do
-    resources :quotes
+    resources :quotes do
+      resources :votes, only: [:create, :destroy]
+    end
   end
 
   resource :session, only: [:new, :create, :destroy] 
