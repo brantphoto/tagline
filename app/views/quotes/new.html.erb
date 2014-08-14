@@ -1,9 +1,17 @@
-<h1>Criteria#new</h1>
-
-Add a quote for this location<br />
-<%= @location.name %>
-
-<%= form_for [@location, @quote] do |f| %>
-	<%= f.text_field :quote, placeholder: "What's is your quote?" %>
-	<%= f.submit %>
+<% catch(:done) do %>
+	<% @location.quotes.each do |l| %>
+		<% if l.user_id.to_s == current_user.id.to_s %>
+			<% @already_quoted = true %>
+			<% throw :done %>
+		<% else %>
+		<% end %>
+	<% end %>
 <% end %>
+
+
+<% if @already_quoted == true %>
+	<%= render 'noquote' %>
+<% else %>
+	<%= render 'quoteform' %>
+<% end %> 
+

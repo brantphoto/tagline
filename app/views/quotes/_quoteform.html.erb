@@ -1,0 +1,5 @@
+<h1>What's your quote for <%= @location.name %>?</h1>
+<%= form_for [@location, @quote] do |f| %>
+	<%= f.text_field :quote, placeholder: "What's is your quote?" %>
+	<%= f.submit %>
+<% end %>
