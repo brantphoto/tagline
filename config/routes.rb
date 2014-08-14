@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+2Rails.application.routes.draw do
   get 'votes/create'
 
   get 'votes/update'
@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   get 'votes/destroy'
 
   get 'quotes/index'
-
-  get 'quotes/new'
 
   get 'users/index'
 

@@ -9,8 +9,12 @@
 		</h1>
 		<h2 id="forh2"> - John Freely </h2>
 		<h4 id="forh3"> Cafe Italiono, USA </h4>
-		<h4 id="forh4"><%= link_to "Get Started >>>", new_user_path %> </h4> 
 		
+		<% if current_user %>
+		<h4 id="forh4"><%= link_to "Browse Locations >>>", locations_path %> </h4> 
+		<% else %>
+		<h4 id="forh4"><%= link_to "Get Started >>>", new_user_path %> </h4>
+		<% end %> 
 	</div>
 
 </div>
