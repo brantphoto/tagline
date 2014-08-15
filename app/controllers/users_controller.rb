@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   end
   
   def create
-    user = User.new(params.require(:user).permit(:username, :email, :password, :password_confirmation, :image))
-    if user.save
-      redirect_to locations_path
-    else 
-      render 'new'
+    @user = User.new(params.require(:user).permit(:username, :email, :password, :password_confirmation, :image))
+    if @user.save
+      redirect_to new_session_path, notice: "Thank you for signing up!"
+    else
+      render "new"
     end
   end
 

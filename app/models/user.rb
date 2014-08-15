@@ -5,6 +5,10 @@ class User
 
   has_mongoid_attached_file :image
   validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  validates_presence_of :username, :email, :password, :password_confirmation
+  validates_format_of :email, :with => /\A(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})\z/i
+  validates_format_of :username, :with => /\A[a-zA-Z]+\z/
+  validates_uniqueness_of :username, :email 
 
   field :username, type: String
   field :firstname, type: String
@@ -12,7 +16,7 @@ class User
   field :email, type: String
   field :phonenumber, type: String
   field :password_digest, type: String
-  field :is_active, type: Mongoid::Boolean
+  field :is_active, type: Mongoid::Boolean 
 
   has_secure_password
   
