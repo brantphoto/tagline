@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 #gem 'mongoid', github: 'mongoid/mongoid'
+gem 'rails_12factor'
+
 gem 'mongoid', '~> 4.0.0'
 gem 'rails', '4.1.4'
 gem 'rspec'
