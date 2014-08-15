@@ -34,10 +34,11 @@
 
 	<div class="col-md-8 shaade1 howtall">
 	
-		<% @quotes.each do |c| %>
+		<% @quotes.sort_by{|quotes| quotes.votes.count}.reverse.each do | c | %>
 
 			<div class="boxxers shaade3" >
 				<h3>"<%= c.quote %>"</h3><h3>  - <%=  c.user.username.capitalize %></h3>
+				<br> <%= c.votes.count %>
 				<%= link_to "Vote", location_quote_votes_path(c.location.id, c.id), :method => :post %>
 			</div>
 		<% end %>	
