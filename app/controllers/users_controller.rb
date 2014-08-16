@@ -9,10 +9,15 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params.require(:user).permit(:username, :email, :password, :password_confirmation, :image))
+
     if @user.save
-      redirect_to new_session_path, notice: "Thank you for signing up!"
+      session[:user_id] = @user.id.to_s
+      redirect_to locations_path
     else
-      render "new"
+      respond_to do |format|
+        format.html { render action: 'new' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
 

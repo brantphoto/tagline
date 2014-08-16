@@ -12,12 +12,17 @@ class QuotesController < ApplicationController
   end
 
   def create
-  	quote = Quote.new(params.require(:quote).permit(:quote))
+  	@quote = Quote.new(params.require(:quote).permit(:quote))
   	# Attach this criterion to a decision
-    quote.location = @location
-    quote.user = current_user
-    if quote.save
+    @quote.location = @location
+    @quote.user = current_user
+    if @quote.save
       redirect_to location_quotes_path(@location.id)
+    else
+      respond_to do |format|
+        format.html { render action: 'new' }
+        format.json { render json: @quote.errors, status: :unprocessable_entity }
+      end
     end
   end
 
