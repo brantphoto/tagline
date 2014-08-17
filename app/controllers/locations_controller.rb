@@ -10,7 +10,11 @@ class LocationsController < ApplicationController
       		return
     	end
 #  		@locations = Location.where(user_id: current_user.id)
-    	@locations = Location.all
+		if params[:search]
+			@locations = Location.search(params[:search])
+		else
+    		@locations = Location.all
+    	end
   	end
 
 

@@ -1,28 +1,15 @@
 <div class="row">
-	<div class="col-md-4 shaade4 headerz headerzleft">
-		<div class="boxxersleft shaade0">
+
+	<div class="hidden-xs col-md-4 shaade4 howtall">
+
+		<div class="hidden-sm boxxersleft shaade0">
 			<h1>Locations </h1>
 			<%= link_to "Add New", new_location_path if current_user %>
 		</div>
-	</div>
-	
-	<div class="col-md-8 shaade1 headerz headerzright">
-		<div class="boxxers shaade0">
-			<h1><%= @location.name %> </h1>
-			<%= link_to "Add a quote", new_location_quote_path(@location.id) %>
-		</div
-	</div>
-</div>
-
-<div class="row">
-
-	<div class="col-md-4 shaade4 howtall">
-
-
 	
 		<% @locations.each do |c| %>
 
-			<div class="boxxersleft shaade1">
+			<div class="hidden-xs boxxersleft shaade1">
 				<h1><%= link_to c.name.capitalize, location_quotes_path(c.id) %></h1>
 
 			</div>	
@@ -33,6 +20,11 @@
 	</div>
 
 	<div class="col-md-8 shaade1 howtall">
+
+		<div class="boxxers shaade0">
+			<h1><%= @location.name %> </h1>
+			<%= link_to "Add a quote", new_location_quote_path(@location.id) %>
+		</div>
 	
 		<% @quotes.sort_by{|quotes| quotes.votes.count}.reverse.each do | c | %>
 
