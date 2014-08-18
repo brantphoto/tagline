@@ -169,27 +169,32 @@ border-radius: 20px;
 
 
 .howtall {
-	height: 550px;
-	overflow: scroll;
+	height: 450px;
 }
 
-.headerz {
-	height: 300
+
+
+.leftylocs { 
+	text-align: center;
+	border-bottom: 3px solid black;
 }
 
-.headerzleft {
-	padding-right: 20px;
-	margin-right: -5px;
-	padding-left: 0px;
-
+.rightylocs { 
+	text-align: center;
+	border-bottom: 3px solid black;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
 }
 
-.headerzright {
-	padding-right: 0px;
-	margin-right: 0px;
-	padding-left: 15px;
-	border-right: 5px solid darken($color5, 30%);
+#toploc {
+	text-align: left;
+	border-bottom: 3px solid black;
+}
 
+.toplocr {
+	text-align: center;
+	border-bottom: 3px solid black;
+	padding-bottom: 10px;
 }
 
 .shaade0 {
@@ -215,6 +220,24 @@ border-radius: 20px;
 .shaade5 {
 	background-color: lighten($color5, 20%);
 }
+
+.shaade55 {
+	background-color: lighten($color5, 30%);
+}
+
+.shaade6 {
+	background-color: lighten($color5, 40%);
+}
+
+.highlightr {
+	background-color: #E8B427;
+}
+
+.scroll {
+	overflow: scroll;
+}
+
+
 
 
 

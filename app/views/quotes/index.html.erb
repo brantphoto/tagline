@@ -1,35 +1,24 @@
-<div class="row">
+<div class="row howtall shaade6">
 
-	<div class="hidden-xs col-md-4 shaade4 howtall">
-
-		<div class="hidden-sm boxxersleft shaade0">
-			<h1>Locations </h1>
-			<%= link_to "Add New", new_location_path if current_user %>
-		</div>
+	<div class="hidden-xs col-sm-4 col-lg-4 col-md-4 scroll shaade4">
+		<h4><%= link_to "+Location", new_location_path if current_user %></h4>
 	
 		<% @locations.each do |c| %>
-
-			<div class="hidden-xs boxxersleft shaade1">
-				<h1><%= link_to c.name.capitalize, location_quotes_path(c.id) %></h1>
-
+			<div class="hidden-xs leftylocs">
+				<h3><%= link_to c.name.capitalize, location_quotes_path(c.id) %></h3>
 			</div>	
 		<% end %>
-	
-
-
 	</div>
 
-	<div class="col-md-8 shaade1 howtall">
+	<div class="col-sm-8 col-lg-8 col-md-8 scroll shaade6">
 
-		<div class="boxxers shaade0">
-			<h1><%= @location.name %> </h1>
-			<%= link_to "Add a quote", new_location_quote_path(@location.id) %>
-		</div>
+		<h4><%= link_to "+Quote", new_location_quote_path(@location.id) %></h4>
+		<h3 class="toplocr"><%= @location.name.capitalize %></h3>
 	
 		<% @quotes.sort_by{|quotes| quotes.votes.count}.reverse.each do | c | %>
 
-			<div class="boxxers shaade3" >
-				<h3>"<%= c.quote %>"</h3><h3>  - <%=  c.user.username.capitalize %></h3>
+			<div class="rightylocs">
+				<h3 class="highlightr">"<%= c.quote %>"</h3><h3>  - <%=  c.user.username.capitalize %></h3>
 				<br> <%= c.votes.count %>
 				<%= link_to "Vote", location_quote_votes_path(c.location.id, c.id), :method => :post %>
 			</div>

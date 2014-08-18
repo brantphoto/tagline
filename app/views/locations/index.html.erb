@@ -1,23 +1,15 @@
-<div class="row" id="howtall">
+<div class="row howtall">
 
-	<div class="col-md-4 shaade4">
-		<h1><b>Locations: </h1>
-		<%= link_to "Add a new Location ", new_location_path if current_user %>
-
-
-	<ul>
-		<% @locations.each do |c| %>
-			<li>
-				<%= link_to c.name, location_quotes_path(c.id) %>
-			</li>	
-		<% end %>
-		</ul>
-
-
+	<div class="col-md-4 shaade6">
+		<h4 class="leftylocs" id="toploc"><%= link_to "+Location ", new_location_path if current_user %></h4>
+			<% @locations.each do |c| %>
+				<div class ="leftylocs">
+					<h1><%= link_to c.name, location_quotes_path(c.id) %></h1>
+				</div>	
+			<% end %>
 	</div>
 
 	<div class="col-md-8 shaade1">
-		<h1> Choose a place in town to review or add your own" </h1>	
 	</div>
 
 </div>
