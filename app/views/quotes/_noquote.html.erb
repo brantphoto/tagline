@@ -1,3 +1,3 @@
 <h1>Already quoted this place? </h1>
 <p> Only 1 quote per person per place. Head back <br> to the location's page to delete your previous quote.  </p>
-<%= link_to @location.name + "Page", location_quotes_path(@location.id) %>
+<%= link_to "Back to " + @location.name.capitalize + " page", location_quotes_path(@location.id) %>
