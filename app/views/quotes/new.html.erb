@@ -8,25 +8,46 @@
 	<% end %>
 <% end %>
 
+<div class="row howtall shaade6">
 
-<% if @already_quoted == true %>
-	<%= render 'noquote' %>
-<% else %>
-	<%= render 'quoteform' %>
-<% end %>
+  <div class="hidden-xs col-sm-4 col-lg-4 col-md-4 scroll shaade4">
+ 
+      <div class="hidden-xs leftylocs">
+        <% if @already_quoted == true %>
+          <h1>already quoted on this one</h1>
+        <% else %>
+          <h1>enter a new location</h1>
+        <% end %>
 
-<%= form_for [ @location, @quote] do |f| %>
-  <% if @quote.errors.any? %>
-    <div id="error_explanation" >
-      <h4><br><%= pluralize(@quote.errors.count, "error") %> prohibited this feature from being saved:</h4>
+      </div>  
+  </div>
 
-      <ul>
-      <% @quote.errors.full_messages.each do |msg| %>
-        <li class="alert alert-info"><%= msg %></li>
+  <div class="col-sm-8 col-lg-8 col-md-8 scroll shaade6">
+
+      <div class="rightylocs">
+      <% if @already_quoted == true %>
+        <%= render 'noquote' %>
+      <% else %>
+        <%= render 'quoteform' %>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-<% end %>
+
+      <%= form_for [ @location, @quote] do |f| %>
+        <% if @quote.errors.any? %>
+          <div id="error_explanation" >
+            <h4><br><%= pluralize(@quote.errors.count, "error") %> prohibited this feature from being saved:</h4>
+
+            <ul>
+            <% @quote.errors.full_messages.each do |msg| %>
+              <li class="alert alert-info"><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      <% end %>
+      </div>
+  </div>
+
+</div>
+
 
 

@@ -1,7 +1,16 @@
+<div class="row howtall shaade6">
 
+  <div class="hidden-xs col-sm-4 col-lg-4 col-md-4 scroll shaade4">
+ 
+      <div class="hidden-xs leftylocs">
+      	<h1>Let's add a new place</h1>
+      </div>  
+  </div>
 
-<h1>Let's add a new place</h1>
-<p> Add the name and zipcode of the place you want to add below </p>
+  <div class="col-sm-8 col-lg-8 col-md-8 scroll shaade6">
+
+      <div class="rightylocs">
+      	<p> Add the name and zipcode of the place you want to add below </p>
 
 <%= form_for @location, :html => {class: "form-group"} do |f| %>
 	<%= f.text_field :name, class: "form-control", placeholder: "Location Name?" %>
@@ -11,3 +20,10 @@
 	<%= f.text_field :zipcode, class: "form-control", placeholder: "Zipcode?" %>
 	<%= f.submit class: "btn btn-default" %>
 <% end %>
+      </div>
+  </div>
+
+</div>
+
+
+

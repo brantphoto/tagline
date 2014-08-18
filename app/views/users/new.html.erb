@@ -1,24 +1,38 @@
-<h1>Sign up for our site!</h1>
+<div class="row howtall shaade6">
 
-<%= form_for @user, :html => {class: "form-group"} do |f| %>
-	<%= f.text_field :username, class: "form-control", placeholder: "WHO ARE YOU????" %><br />
-	<%= f.text_field :email, class: "form-control", placeholder: "your super secret email address..  we will be spamming.." %><br />
-	<%= f.password_field :password, class: "form-control", placeholder: "password ..." %><br />
-	<%= f.password_field :password_confirmation, class: "form-control", placeholder: "... and again" %>
-	<%= f.submit class:"btn btn-default" %>
-<% end %>
+  <div class="hidden-xs col-sm-4 col-lg-4 col-md-4 scroll shaade4">
+ 
+      <div class="hidden-xs leftylocs">
+        <h3>Sign up for a free account to start +summing up your world.</h3>
+      </div>  
+  </div>
 
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this feature from being saved:</h2>
+  <div class="col-sm-8 col-lg-8 col-md-8 scroll shaade6">
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li class="alert alert-info"><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<% end %>
+  
+  
+  
+      <div class="rightylocs">
+        <%= form_for @user, :html => {class: "form-group"} do |f| %>
+          <%= f.text_field :username, class: "form-control", placeholder: "WHO ARE YOU????" %><br />
+          <%= f.text_field :email, class: "form-control", placeholder: "Email Address?" %><br />
+          <%= f.password_field :password, class: "form-control", placeholder: "password must be 5 characters" %><br />
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "please type password again" %>
+          <%= f.submit class:"btn btn-default" %>
+        <% end %>
 
+        <%= form_for(@user) do |f| %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this feature from being saved:</h2>
+              <ul>
+                <% @user.errors.full_messages.each do |msg| %>
+                  <li class="alert alert-info"><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+</div>

@@ -1,15 +1,15 @@
 <div class="row howtall">
 
-	<div class="col-md-4 shaade6">
+	<div class="col-md-4 shaade4">
 		<h4 class="leftylocs" id="toploc"><%= link_to "+Location ", new_location_path if current_user %></h4>
 			<% @locations.each do |c| %>
 				<div class ="leftylocs">
-					<h1><%= link_to c.name, location_quotes_path(c.id) %></h1>
+					<h3><%= link_to c.name.capitalize, location_quotes_path(c.id) %></h3>
 				</div>	
 			<% end %>
 	</div>
 
-	<div class="col-md-8 shaade1">
+	<div class="col-md-8 shaade6 howtall">
 	</div>
 
 </div>
