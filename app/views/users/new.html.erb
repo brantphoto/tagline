@@ -1,12 +1,11 @@
 <h1>Sign up for our site!</h1>
 
-<%= form_for @user do |f| %>
-	<%= f.text_field :username, placeholder: "WHO ARE YOU????" %><br />
-	<%= f.text_field :email, placeholder: "your super secret email address..  we will be spamming.." %><br />
-	<%= f.password_field :password, placeholder: "password ..." %><br />
-	<%= f.password_field :password_confirmation, placeholder: "... and again" %>
-	<%= f.file_field :image %>
-	<%= f.submit %>
+<%= form_for @user, :html => {class: "form-group"} do |f| %>
+	<%= f.text_field :username, class: "form-control", placeholder: "WHO ARE YOU????" %><br />
+	<%= f.text_field :email, class: "form-control", placeholder: "your super secret email address..  we will be spamming.." %><br />
+	<%= f.password_field :password, class: "form-control", placeholder: "password ..." %><br />
+	<%= f.password_field :password_confirmation, class: "form-control", placeholder: "... and again" %>
+	<%= f.submit class:"btn btn-default" %>
 <% end %>
 
 <%= form_for(@user) do |f| %>
@@ -16,7 +15,7 @@
 
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li class="alert alert-info"><%= msg %></li>
       <% end %>
       </ul>
     </div>
