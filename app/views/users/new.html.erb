@@ -14,7 +14,7 @@
   
       <div class="rightylocs">
         <%= form_for @user, :html => {class: "form-group"} do |f| %>
-          <%= f.text_field :username, class: "form-control", placeholder: "WHO ARE YOU????" %><br />
+          <%= f.text_field :username, class: "form-control", placeholder: "Please pick a Username" %><br />
           <%= f.text_field :email, class: "form-control", placeholder: "Email Address?" %><br />
           <%= f.password_field :password, class: "form-control", placeholder: "password must be 5 characters" %><br />
           <%= f.password_field :password_confirmation, class: "form-control", placeholder: "please type password again" %>
