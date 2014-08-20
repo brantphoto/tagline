@@ -2,7 +2,6 @@ class VotesController < ApplicationController
 	 # before_action, :new_vote , except: [:create] 
 	 before_action :get_quote
 	 before_action :check_security
-
   def create
     wipe_votes
   	vote = Vote.new
@@ -44,7 +43,7 @@ class VotesController < ApplicationController
 
   def check_security
     if !current_user
-      redirect_to home_path
+      redirect_to new_session_path
     end
   end
 end

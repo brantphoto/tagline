@@ -5,10 +5,6 @@ class LocationsController < ApplicationController
 	end  
 
 	def index
-    	if !current_user
-      		redirect_to home_path
-      		return
-    	end
 #  		@locations = Location.where(user_id: current_user.id)
 		if params[:search]
 			@locations = Location.search(params[:search])

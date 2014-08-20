@@ -1,6 +1,6 @@
 class QuotesController < ApplicationController
-  before_action :get_location 
-  before_action :check_security
+  before_action :get_location
+  before_action :check_security, only:[:new, :create, :edit, :update, :destroy]
 
   def index
   	@quotes = @location.quotes
@@ -57,7 +57,7 @@ private
 
   def check_security
     if !current_user
-      redirect_to home_path
+      redirect_to new_session_path
     end
   end
 
